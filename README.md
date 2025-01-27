@@ -1,4 +1,14 @@
 # shape-clicker
-A bug-ridden clicker game about shapes
+Click various shapes endlessly. Like Cookie Clicker but with more bugs.
 
-**If you want to, you can play it:** <a href="https://shape-clicker.superhi.com">evan-w-lee.github.io/shape-clicker/shape</a>
+## 24-01-25: Major update to 2.0!
+
+Hello geometry nerds! I've been hard at work (not really) improving Shape Clicker (debatable, however progress.) 
+
+I've cleaned up numerous bugs, including...
+* something i forgot
+* something else i forgot
+* that black square thing
+
+I've added new features, such as...
+* uh

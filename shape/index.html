@@ -1,21 +1,53 @@
-<script src="/superhi.js"></script><!DOCTYPE html>
-<html>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
   <head>
-    <title>Shape Clicker</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
     <meta charset="utf-8"/>
-    <link rel="icon" href="favicon.png"/>
-    <meta name="author" content="Evan Lee"/>
-    <meta name="description" content="A game where you click shapes!"/>
+    <title>Shape Clicker</title>
+
+    <link rel="stylesheet" href="styles.css">
+    <script src="main.js"></script>
   </head>
   <body onload="recoverData();">
+    <div style="position: fixed; top: 8px; left: 8px; color: #333; font-size: 16px; font-family: Rubik;">Shape Clicker v2.0-FULL</div>
+    <div style="position: fixed; top: 30px; left: 8px; color: #333; font-size: 12px; font-family: Rubik;">Evan Lee</div>
+    <!--<div class="dropdown3">
+      <button class="dropbtn3"><img src="trophy.png" alt="Achievements" style="width: 35px;"></button>
+        <div class="dropdown-content3">
+          <a href="javascript:useSquare()">Square</a>
+          <a href="javascript:useCircle()"><span id="circleVisual">???</span></a>
+          <a href="javascript:useTriangle()"><span id="triangleVisual">???</span></a>
+          <a href="javascript:usePentagon()"><span id="pentagonVisual">???</span></a>
+          <a href="javascript:useWrapper()"><span id="rainbowVisual">???</span></a>
+        </div>
+      </div>-->
+    <div id="little-body">
+      
+      <div id="circle-screen">
+        <div class="shape-effect-text">Circle Unlocked</div>
+      </div>
+      <div id="circle-effect"></div>
+
+      <div id="triangle-screen">
+        <div class="shape-effect-text">Triangle Unlocked</div>
+      </div>
+      <div id="triangle-effect"></div>
+
+      <div id="pentagon-screen">
+        <div class="shape-effect-text">Pentagon Unlocked</div>
+      </div>
+      <div id="pentagon-effect"></div>
+
+      <div id="rainbow-screen">
+        <div class="shape-effect-text">Perfection Reached</div>
+      </div>
+      <div id="rainbow-effect"></div>
+
   <div class="dropdown">
     <button class="dropbtn">Upgrades 
     </button>
     <div class="dropdown-content">
-      <a href="javascript:buyautoclick()" id="buyautoclickcontent">Autoclick <span id="autoclicklevelVisual">1</span> CPS [<span id="autoclickPrice">30</span>]</a>
-      <a href="javascript:buyClicks()" id="buyclickcontent">Clicks give <span id="price">2</span> [<span id="extraClickPrice">50</span>]</a>
+      <a href="javascript:buyautoclick()" id="buyautoclickcontent">Autoclicker Lv. <span id="autoclicklevelVisual">1</span> [<span id="autoclickPrice">30</span>]</a>
+      <a href="javascript:buyClicks()" id="buyclickcontent">+<span id="price">2</span> points per click [<span id="extraClickPrice">50</span>]</a>
       <a href="javascript:buyShape()" id="buyshapecontent">Next Shape [<span id="shapeprice">250,000</span>]</a>
     </div>
   </div> 
@@ -29,6 +61,8 @@
         <a href="javascript:useWrapper()"><span id="rainbowVisual">???</span></a>
       </div>
     </div>
+    
+
     <center>
       <div class="scoreborder"><div id="score">0</div></div>
       <button onclick="clicked()"id="square">.</button><div></div>
@@ -37,5 +71,6 @@
       <button onclick="clicked()" id="pentagon"><div class="pentagon-1">o</div></button>
       <button onclick="clicked()" id="wrapper-1"><div id="wrapper">o</div></button>
     </center>
+    </div>
   </body>
 </html>

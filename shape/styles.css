@@ -1,0 +1,464 @@
+@import url('https://fonts.googleapis.com/css?family=Rubik:700,700italic,regular,italic');
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:700,700italic,regular,italic');
+
+#little-body {
+  font-size: 16px;
+	line-height: 1.5;
+	
+	background-color: #ffffff;
+	color: #333333;
+	margin: 40px auto 40px auto;
+  
+  width: 620px;
+}
+
+/* SHAPES */
+
+#square {
+  height: 60px;
+  width: 60px;
+  background: #f7513b;
+  margin-top: 45%;
+  color: #f7513b;
+  cursor: pointer;
+  display: block;
+  border: 5px solid white;
+  outline: none;
+}
+@keyframes snap-rotate {
+  0% {transform: rotate(0deg);}
+  12% {transform: rotate(0deg);}
+  13% {transform: rotate(45deg);}
+  24% {transform: rotate(45deg);}
+  25% {transform: rotate(90deg);}
+  37% {transform: rotate(90deg);}
+  38% {transform: rotate(135deg);}
+  49% {transform: rotate(135deg);}
+  50% {transform: rotate(180deg);}
+  63% {transform: rotate(180deg);}
+  64% {transform: rotate(225deg);}
+  75% {transform: rotate(225deg);}
+  76% {transform: rotate(270deg);}
+  87% {transform: rotate(270deg);}
+  88% {transform: rotate(315deg);}
+  99% {transform: rotate(315deg);}
+  100% {transform: rotate(0deg);}
+}
+#square:hover {
+  filter: grayscale(10%);
+  border-width: 5px;
+  border-style: double;
+  border-color: white;
+}
+
+#square:active { 
+  filter: grayscale(40%);
+}
+
+#circle {
+  height: 60px;
+  width: 60px;
+  border-radius: 50px;
+  background: #854ede;
+  margin-top: 45%;
+  color: #854ede;
+  cursor: pointer;
+  display: none;
+  border: 5px solid white;
+}
+#circle:hover { 
+  filter: grayscale(20%);
+  border-width: 5px;
+  border-style: double;
+  border-color: white;
+}
+#circle:active { 
+  /* NOTE: Does not do anything */
+  filter: grayscale(40%);
+  transform: scale(1.01);
+}
+
+#triangleImg {
+	width: 0;
+	height: 0;
+	border-left: 30px solid transparent;
+	border-right: 30px solid transparent;
+	border-bottom: 49px solid #ffef8a; 
+  cursor: pointer;
+}
+#triangle {
+  background: transparent;
+  border: none;
+  color: transparent;
+  display: none;
+  margin-top: 45%;
+}
+#triangle:active {
+  filter: grayscale(20%);
+  transform: scale(0.90);
+}
+#diamond-container {
+  background: none;
+  border: none;
+  
+}
+
+.pentagon-1:active {
+  filter: grayscale(20%);
+  transform: scale(0.92);
+}
+.pentagon-1 {
+	position: relative;
+	width: 53px; 
+	height: 50px;
+	background: #5eb1ff;
+	clip-path: polygon( 50% 0, 100% 38%, 81% 100%, 19% 100%, 0 38%);
+}
+#pentagon {
+  background: transparent;
+  border: none;
+  color: transparent;
+  cursor: pointer;
+  display: none;
+  margin-top: 45%;
+}
+
+#wrapper { 
+  height: 50px;
+  width: 50px;
+background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
+background-size: 1800% 1800%;
+
+-webkit-animation: rainbow 18s ease infinite;
+-z-animation: rainbow 18s ease infinite;
+-o-animation: rainbow 18s ease infinite;
+  animation: rainbow 18s ease infinite;}
+
+@-webkit-keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@-moz-keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@-o-keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@keyframes rainbow { 
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+#wrapper-1 {
+  border: none;
+  background: none;
+  color: transparent;
+  cursor: pointer;
+  display: none;
+  margin-top: 45%;
+}
+#wrapper-1:active {
+  filter: grayscale(20%);
+  transform: scale(0.92);
+}
+
+/* GAME */
+
+#score {
+  font-family: Source Code Pro;
+  font-size: 32px; 
+  text-align: center;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px; 
+  border: 1px solid black; 
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: Rubik;
+  margin: 0;
+  cursor: pointer
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  min-width: 160px;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  border: 1px solid black;
+  margin-top: 1px;
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.dropdown2 {
+  float: right;
+  overflow: hidden;
+}
+
+.dropdown2 .dropbtn2 {
+  font-size: 16px; 
+  border: 1px solid black; 
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: Rubik;
+  margin: 0;
+  cursor: pointer
+}
+.dropdown2:hover, .dropbtn2:hover, .dropdown-content2 a:hover, .dropdown:hover, .dropbtn:hover, .dropdown-content a:hover {
+  background:#f5f5f5;
+}
+.dropdown-content2 {
+  display: none;
+  position: absolute;
+  min-width: 160px;
+  z-index: 1;
+}
+
+.dropdown-content2 a {
+  border: 1px solid black;
+  margin-top: 1px;
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+dropdown-content:active {
+  background: #4dff79;
+}
+.dropdown2:hover .dropdown-content2 {
+  display: block;
+}
+
+.dropdown3 .dropbtn3 {
+  font-size: 16px;
+	line-height: 1.5;
+	
+	background-color: #ffffff;
+	color: #333333;
+  font-size: 16px; 
+  border: none; 
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: Rubik;
+  margin-top: -10px;
+  cursor: pointer;
+}
+.dropdown-content3 a:hover, .dropdown:hover, .dropbtn:hover, .dropdown-content a:hover {
+  background:#f5f5f5;
+}
+.dropdown-content3 {
+  display: none;
+  position: absolute;
+  min-width: 160px;
+  z-index: 1;
+}
+
+.dropdown-content3 a {
+  border: 1px solid black;
+  margin-top: 1px;
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+.dropdown3:hover .dropdown-content3 {
+  display: block;
+}
+.dropdown3 {
+  overflow: hidden;
+  float: right;
+}
+
+#circle-screen {
+  display: none;
+  height: 100vh;
+  width: 100vw;
+  background: #854ede;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  animation: fadetowhite 3s forwards ease;
+}
+@keyframes fadetowhite {
+  0% {opacity: 0;}
+  100% {
+    opacity: 1;
+    cursor: none; 
+  }
+}
+
+#circle-effect {
+  display: none;
+  height: 100vh;
+  width: 100vw;
+  background: #854ede;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  justify-content: center;
+  align-items: center;
+  animation: shrink 3s forwards ease-in;
+}
+
+@keyframes shrink {
+  0% {transform: scale(1);}
+  100% {
+    transform: scale(0); 
+    height: 100vw;
+    margin-top: -21%;
+  }
+}
+.shape-effect-text {
+  color: white;
+  justify-content: center;
+  text-align: center;
+  margin-top: 20%;
+  animation: zoom 8s forwards;
+  font-size: 72px;
+}
+@keyframes zoom
+{
+0% {opacity: 0; transform: scale(30);}
+98% {opacity: 1; transform: scale(1);}
+99% {transform: rotate(1);}
+100% {transform: rotate(0);}
+}
+
+#triangle-screen {
+  z-index: 10000000;
+  display: none;
+  height: 100vh;
+  width: 100vw;
+  background: #ffef8a;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  animation: fadetowhite 3s forwards ease;
+}
+#triangle-effect {
+  display: none;
+  height: 100vh;
+  width: 100vw;
+  background: #ffef8a;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  justify-content: center;
+  align-items: center;
+  animation: shrink 3s forwards ease-in;
+}
+
+
+#pentagon-screen {
+  z-index: 10000000;
+  display: none;
+  height: 100vh;
+  width: 100vw;
+  background: #5eb1ff;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  animation: fadetowhite 3s forwards ease;
+}
+#pentagon-effect {
+  display: none;
+  height: 100vh;
+  width: 100vw;
+  background: #5eb1ff;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  justify-content: center;
+  align-items: center;
+  animation: shrink 3s forwards ease-in;
+}
+
+
+#rainbow-screen {
+  z-index: 10000000;
+  display: none;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  background: #f7513b;
+  animation: fadetowhite 3s forwards ease;
+}
+#rainbow-effect {
+  display: none;
+  height: 100vh;
+  width: 100vw;
+  background: #f7513b;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  justify-content: center;
+  align-items: center;
+  animation: shrink 8s forwards ease-in;
+}
+.floating-points {
+  color: black;
+  position: absolute;
+  font-size: 16px;
+  pointer-events: none;
+  animation: floatUp 0.5s ease-out forwards, scaleUp 0.05s ease-out;
+}
+@keyframes floatUp {
+  0% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+  100% {
+      opacity: 0;
+      transform: translateY(-40px);
+      
+  }
+}
+@keyframes scaleUp {
+  0% {
+      transform: scale(0.8);
+  }
+  100% {
+      transform: scale(1);
+  }
+}
