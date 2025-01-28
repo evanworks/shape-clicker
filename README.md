@@ -1,7 +1,13 @@
 # shape-clicker
 Click various shapes endlessly. Like Cookie Clicker but with more bugs.
 
-## 24-01-25: Major update to 2.0!
+## 27-01-25: 2.0.1
+
+Moved around the file layout
+
+
+
+## 26-01-25: Major update to 2.0!
 
 Hello geometry nerds! I've been hard at work (not really) improving Shape Clicker (debatable, however progress.) 
 
